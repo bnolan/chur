@@ -1,0 +1,28 @@
+{
+  "name": "boop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone.localstorage": "^1.1.16",
+    "jquery": "^2.1.4",
+    "level-js": "^2.2.1",
+    "mousetrap": "^1.5.3",
+    "node-rsa": "^0.2.25",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "signalhub": "^4.1.1",
+    "simple-peer": "^5.11.4",
+    "timeago": "^0.2.0",
+    "underscore": "^1.8.3",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "budo": "^4.1.0"
+  }
+}

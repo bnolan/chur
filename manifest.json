@@ -1,0 +1,17 @@
+{
+  "name": "Boop",
+  "description": "Peer to peer microblogging",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": "icon-38.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": { "512": "icon-512.png" }
+}
+

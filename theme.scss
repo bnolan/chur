@@ -1,0 +1,195 @@
+
+$pink: #f0a;
+$darkpink: darken(#f0a, 30%);
+$black: #333;
+$lightgrey: lighten($black, 40%);
+$frosted: #eee;
+
+body{
+  font-family: 'helvetica neue', sans-serif;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  color: $black;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+@mixin font{
+  font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", sans-serif;
+}
+
+@mixin post-with-avatar{
+  position: relative;
+  padding: 12px 12px 12px 60px;
+
+  .avatar{
+    position: absolute;
+    left: 6px;
+
+    background: $pink;
+    border-radius: 3px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+h1{
+  @include font;
+
+  color: $darkpink;
+  background: $pink;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 6px;
+  margin: 0;
+}
+
+.tabs{
+  background: $pink;
+  margin: 0;
+  padding: 4px 0 0 4px;
+  border-bottom: 1px solid $lightgrey;
+
+  li{
+    list-style: none;
+    display: inline-block;
+    line-height: 30px;
+    background: white;
+    border-radius: 4px 4px 0 0;
+    border-left: 1px solid ligten($lightgrey, 10%);
+    border-top: 1px solid ligten($lightgrey, 10%);
+    border-right: 1px solid darken($lightgrey, 10%);
+    border-bottom: 1px solid $lightgrey;
+    margin-right: 10px;
+    padding: 0 20px;
+    position: relative;
+    top: 1px;
+    background: #eee;
+    cursor: pointer;
+  }
+
+  li:hover{
+    background: white;
+    text-decoration: underline;
+  }
+
+  li.active{
+    border-bottom: 1px solid white;
+    background: white;
+  }
+}
+
+.post, .friend{
+  @include post-with-avatar;
+  border-bottom: 1px solid #ccc;
+
+  h3{
+    font-size: 1em;
+    margin: 0;
+
+    .author{
+      @include font;
+      font-size: 1.3em;
+      color: $black;
+    }
+    .pkf{
+      margin-left: 6px;
+      color: $lightgrey;
+      font-weight: normal;
+    }
+    .pkf:before{
+      content: '(';
+    }
+    .pkf:after{
+      content: ')';
+    }
+  }
+
+  .meta{
+    color: $lightgrey;
+  }
+}
+
+.post-form{
+  div.new-post{
+    @include post-with-avatar;
+
+    textarea{
+      outline: none;
+      border: none;
+      resize: none;
+      font: inherit;
+      width: 100%;
+      height: 60px;
+    }
+  }
+
+  .toolbar{
+    border-top: 1px solid $lightgrey;
+    border-bottom: 1px solid $lightgrey;
+    background: $frosted;
+    padding: 6px;
+    text-align: right;
+
+    input.btn{
+      font: inherit;
+      background: none;
+      border: 1px solid $lightgrey;
+      border-radius: 4px;
+      color: $lightgrey;
+      padding: 4px 8px;
+      line-height: 20px;
+    }
+
+    input.btn.active{
+      background: $pink;
+      border-color: lighten($pink, 20%) darken($pink, 20%) darken($pink, 20%) lighten($pink, 20%);
+      color: white;
+    }
+  }
+}
+
+.register, .friend-form{
+  div{
+    display: block;
+    padding: 10px 10px 4px 10px;
+
+    label{
+      display: block;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    input{
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      padding: 4px;
+      color: #333;
+      font: inherit;
+    }
+  } 
+
+  button{
+    background: $pink;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font: inherit;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover{
+      background: $darkpink;
+    }
+  }
+
+  .error{
+    margin-top: 10px;
+    display: block;
+    color: red;
+  }
+}
